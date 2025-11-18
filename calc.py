@@ -14,6 +14,8 @@ def on_button_click(event):
     global numberInput
     global mode
     if event.type == tk.EventType.Key:
+        if event.char=="":
+            return
         button_text = event.char
         #キーが押されました
     else:
