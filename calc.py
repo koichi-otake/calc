@@ -13,8 +13,12 @@ def on_button_click(event):
     global regA
     global numberInput
     global mode
-    button_text = event.widget.cget("text")
-    #print(f"{button_text}ボタンが押されました")
+    if event.type == tk.EventType.Key:
+        button_text = event.char
+        #キーが押されました
+    else:
+        button_text = event.widget.cget("text")
+    print(f"{button_text}ボタンが押されました")
     #print(f"{mode} : {regA} : {label["text"]} {button_text}")
     if button_text == "AC":
         mode=""
@@ -108,6 +112,7 @@ def on_button_click(event):
 #メインウィンドウを作る
 root = tk.Tk()
 root.title("計算機")
+root.bind('<Key>',on_button_click)
 
 regA=0 #前回の入力値または計算結果
 mode=""   #現在の計算モードを示す
