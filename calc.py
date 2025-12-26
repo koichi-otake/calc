@@ -20,8 +20,8 @@ def on_button_click(event):
         #キーが押されました
     else:
         button_text = event.widget.cget("text")
-    #print(f"{button_text}ボタンが押されました")
-    #print(f"{mode} : {regA} : {label["text"]} {button_text}")
+        #print(f"{button_text}ボタンが押されました")
+        #print(f"{mode} : {regA} : {label["text"]} {button_text}")
     if button_text == "AC":
         mode=""
         regA=0
@@ -68,14 +68,14 @@ def on_button_click(event):
             elif length<10:
                 label["text"]+=button_text
             #regA=float(label["text"])
-        elif button_text in ("+-X/="):
+        elif button_text in ("+-*/="):
             #機能ボタンを押されたら数字を確定し表示値を計算値に更新
             numberInput=False
             #print(f"{mode}+{regA}+{button_text}")
             if mode == "+":
                 regA+=float(label["text"])
                 #print(label["text"])
-            elif mode == "X":
+            elif mode == "*":
                 regA*=float(label["text"])
             elif mode == "/":
                 #print(f"{regA} {label['text']}")
@@ -107,7 +107,7 @@ def on_button_click(event):
         elif button_text==".":
             label["text"]="0."
             numberInput=True   
-        elif button_text in ("+-X/"):
+        elif button_text in ("+-*/"):
             mode = button_text
             label["text"]=f"{regA}{mode}"
             
@@ -126,7 +126,7 @@ label.grid(row=0,column=0, columnspan=4)
 
 #計算機のボタン名のリスト
 buttonList = ( "C","+/-","√","/",
-               "7","8","9","X",
+               "7","8","9","*",
                "4","5","6","-",
                "1","2","3","+",
                "AC","0",".","=")
