@@ -113,7 +113,7 @@ def on_button_click(event):
             
 #メインウィンドウを作る
 root = tk.Tk()
-root.title("簡易計算機")
+root.title("簡易電卓")
 root.bind('<Key>',on_button_click)
 
 regA=0 #前回の入力値または計算結果
